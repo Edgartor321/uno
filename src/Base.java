@@ -7,6 +7,6 @@ public interface Base {
     public Integer anterior (int p, Integer[]l);
     public void limpiar (Integer[]l);
     public Integer primero (Integer[]l);
-    public Integer[] imprime(Integer[]l);
+    public void imprime(Integer[]l);
     public void asigna(int p, Integer x,Integer[]l);
 }
