@@ -1,6 +1,6 @@
 public interface Base {
     public void insertar (Integer x,Integer[] l);
-    public int localizar (int x,Integer[]l);
+    public void localizar (int x,Integer[]l);
     public Integer recuperar (int p,Integer[]l);
     public void suprimir (int p,Integer[] l);
     public Integer siguiente (int p,Integer[]l);

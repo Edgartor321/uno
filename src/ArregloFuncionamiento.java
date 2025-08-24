@@ -14,13 +14,18 @@ public class ArregloFuncionamiento implements Base{
     }
 
     @Override
-    public int localizar(int x, Integer[] l){
+    public void localizar(int x, Integer[] l){
+        boolean localizado =false;
         for (int i = 0; i < l.length; i++) {
             if (l[i]!=null&& l[i]==x) {
-                return i;
+                System.out.println(i);
+                localizado=true;
             }
         }
-        throw new RuntimeException("El elemneto no fue encontrado en el arreglo");
+        if (!localizado){
+            throw new RuntimeException("El elemneto no fue encontrado en el arreglo");
+        }
+        System.out.println();
     }
 
     @Override
@@ -70,19 +75,27 @@ public class ArregloFuncionamiento implements Base{
 
     @Override
     public Integer primero(Integer[] l) {
-        recuperar(0,l);
-        return 0;
+        Integer i=recuperar(0,l);
+        return i;
     }
 
     @Override
     public void imprime(Integer[] l) {
-        System.out.println(l);
+        for (Integer imp:l){
+            System.out.print(imp+", ");
+        }
+        System.out.println();
     }
 
     @Override
     public void asigna(int p, Integer x, Integer[] l) {
     if (p<l.length&&p>=0){
-        if (x !=null)
+        if (x !=null){
+            l[p]=x;
+            System.out.println("Se ha asignado el valor en el indice "+p);
+        }else{
+            throw new RuntimeException("El tipo de dato ingreado no es valido");
+        }
     }else {
         throw new RuntimeException("El indice no esta contenido en el arreglo");
     }
