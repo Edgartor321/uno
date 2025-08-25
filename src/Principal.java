@@ -5,8 +5,8 @@ public class Principal {
         ArregloFuncionamiento funcionamiento =new ArregloFuncionamiento();
         Random r=new Random();
         Integer[] array1=new Integer[100];
-        for (int i = 0; i < 100; i++) {
-            funcionamiento.insertar(r.nextInt(1,100),array1);
+        for (int i = 0; i < array1.length; i++) {
+            funcionamiento.insertar(r.nextInt(0,101),array1);
         }
         funcionamiento.imprime(array1);
         //funcionamiento.insertar(1,array1); //Check
@@ -16,7 +16,10 @@ public class Principal {
         //System.out.println(funcionamiento.siguiente(-1,array1)+"  "+funcionamiento.anterior(3,array1));//Check
        // funcionamiento.limpiar(array1);//check
         //System.out.println(funcionamiento.primero(array1));//Check
-        funcionamiento.asigna(2,1,array1);
+        //funcionamiento.asigna(2,1,array1);//Check
         funcionamiento.imprime(array1);
+        funcionamiento.mayor(array1);
+        funcionamiento.promedio(array1);
+        funcionamiento.contador(array1);
     }
 }

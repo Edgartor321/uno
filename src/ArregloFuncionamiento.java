@@ -100,4 +100,52 @@ public class ArregloFuncionamiento implements Base{
         throw new RuntimeException("El indice no esta contenido en el arreglo");
     }
     }
+    public void mayor (Integer[]l){
+        Integer alto =0;
+        Integer sucesor=0;
+        for (int i = 0; i < l.length; i++) {
+            if (alto<l[i]){
+                sucesor=alto;
+                alto=l[i];
+            }
+        }
+        System.out.println(alto+" "+sucesor);
+    }
+    public void promedio (Integer[]l){
+        Integer sum =0;
+        for (int i = 0; i < l.length; i++) {
+            sum=sum+l[i];
+        }
+        if (l.length<1){
+            throw new RuntimeException("No hay elementos en el arreglo");
+        }else {
+            System.out.println("promedio: "+(sum/l.length));
+        }
+    }
+    public void contador (Integer[]l){
+        int distintos=0;
+        int[] frecuencias=new int[l.length];
+        Integer[] valores = new Integer[l.length];
+        for (int i = 0; i < l.length; i++) {
+            int num= l[i];
+            boolean localizado = false;
+
+            for (int j = 0; j < distintos; j++) {
+                if (valores[j]==num){
+                    frecuencias[j]++;
+                    localizado=true;
+                    break;
+                }
+            }
+            if (!localizado){
+                valores[distintos]=num;
+                frecuencias[distintos]=1;
+                distintos++;
+            }
+        }
+        for (int i = 0; i < distintos; i++) {
+            System.out.println(valores[i]+": "+frecuencias[i]);
+        }
+    }
+    
 }
